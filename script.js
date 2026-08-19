@@ -10,6 +10,20 @@ document.getElementById("form-contacto").addEventListener("submit", function (e)
   const correo = document.getElementById("correo").value.trim();
   const mensaje = document.getElementById("mensaje").value.trim();
 
+  if(!nombre || !correo || !mensaje) {
+alert("por favor completa todos los campos. ");
+}
+
+const arrobaIndex = correo.index0f("@");
+const puntoIndex = correo.lastIndex0f(".");
+
+const correoValido = arrobaIndex >0 && puntoIndex > arrobaIndex + 1 && puntoIndex < correo.lenght -1;
+
+if (!correoValido) {
+alert("por favor ingresa un correo electronico valido.");
+return;
+}
+	
   // TODO (rama feature-validacion): agregar aquí las reglas de validación,
   // por ejemplo: que ningún campo esté vacío, y que el correo tenga un
   // formato razonable (contenga "@" y ".").
